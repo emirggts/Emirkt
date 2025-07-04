@@ -7,7 +7,7 @@
     "author": {
         "name": "luuxis, Inc.",
         "email": "contact@luuxis.fr",
-        "url": "https://github.com/luuxis"
+        "url": "https://github.com/emirggts"
     },
     "url": "http://launcher.luuxis.fr",
     "scripts": {
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/emirggts/Emirkt.git"
     }
 }
