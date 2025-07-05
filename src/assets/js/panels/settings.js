@@ -127,8 +127,8 @@ class Settings {
         let totalMem = Math.trunc(os.totalmem() / 1073741824 * 10) / 10;
         let freeMem = Math.trunc(os.freemem() / 1073741824 * 10) / 10;
 
-        document.getElementById("total-ram").textContent = `${totalMem} Go`;
-        document.getElementById("free-ram").textContent = `${freeMem} Go`;
+        document.getElementById("total-ram").textContent = `${totalMem} GB`;
+        document.getElementById("free-ram").textContent = `${freeMem} GB`;
 
         let sliderDiv = document.querySelector(".memory-slider");
         sliderDiv.setAttribute("max", Math.trunc((80 * totalMem) / 100));
@@ -149,13 +149,13 @@ class Settings {
         let minSpan = document.querySelector(".slider-touch-left span");
         let maxSpan = document.querySelector(".slider-touch-right span");
 
-        minSpan.setAttribute("value", `${ram.ramMin} Go`);
-        maxSpan.setAttribute("value", `${ram.ramMax} Go`);
+        minSpan.setAttribute("value", `${ram.ramMin} GB`);
+        maxSpan.setAttribute("value", `${ram.ramMax} GB`);
 
         slider.on("change", async (min, max) => {
             let config = await this.db.readData('configClient');
-            minSpan.setAttribute("value", `${min} Go`);
-            maxSpan.setAttribute("value", `${max} Go`);
+            minSpan.setAttribute("value", `${min} GB`);
+            maxSpan.setAttribute("value", `${max} GB`);
             config.java_config.java_memory = { min: min, max: max };
             this.db.updateData('configClient', config);
         });
@@ -251,42 +251,30 @@ class Settings {
             await this.db.updateData('configClient', configClient);
         })
 
+        // Tema her zaman dark olacak:
+        let theme = "dark";
+
+        // İlgili butona aktif sınıf ekle
+        document.querySelector('.theme-btn-sombre').classList.add('active-theme');
+
+        // Arkaplanı karanlık olarak ayarla
+        setBackground(true);
+
+        // Diğer temalar devre dışı: tıklama olunca hiçbir şey yapmasın
         let themeBox = document.querySelector(".theme-box");
-        let theme = configClient?.launcher_config?.theme || "auto";
-
-        if (theme == "auto") {
-            document.querySelector('.theme-btn-auto').classList.add('active-theme');
-        } else if (theme == "dark") {
-            document.querySelector('.theme-btn-sombre').classList.add('active-theme');
-        } else if (theme == "light") {
-            document.querySelector('.theme-btn-clair').classList.add('active-theme');
-        }
-
         themeBox.addEventListener("click", async e => {
-            if (e.target.classList.contains('theme-btn')) {
-                let activeTheme = document.querySelector('.active-theme');
-                if (e.target.classList.contains('active-theme')) return
-                activeTheme?.classList.remove('active-theme');
+        if (e.target.classList.contains('theme-btn')) {
+            // Sadece karanlık tema olduğu için başka bir şey yapılmaz
+            return;
+        }
+        });
 
-                if (e.target.classList.contains('theme-btn-auto')) {
-                    setBackground();
-                    theme = "auto";
-                    e.target.classList.add('active-theme');
-                } else if (e.target.classList.contains('theme-btn-sombre')) {
-                    setBackground(true);
-                    theme = "dark";
-                    e.target.classList.add('active-theme');
-                } else if (e.target.classList.contains('theme-btn-clair')) {
-                    setBackground(false);
-                    theme = "light";
-                    e.target.classList.add('active-theme');
-                }
-
-                let configClient = await this.db.readData('configClient')
-                configClient.launcher_config.theme = theme;
-                await this.db.updateData('configClient', configClient);
-            }
-        })
+        // Tema ayarını kaydet
+        (async () => {
+        let configClient = await this.db.readData('configClient')
+        configClient.launcher_config.theme = "dark";
+        await this.db.updateData('configClient', configClient);
+        })();
 
         let closeBox = document.querySelector(".close-box");
         let closeLauncher = configClient?.launcher_config?.closeLauncher || "close-launcher";

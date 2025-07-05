@@ -14,7 +14,7 @@ class Login {
         this.db = new database();
 
         if (typeof this.config.online == 'boolean') {
-            this.config.online ? this.getMicrosoft() : this.getCrack()
+            this.config.online ? this.getCrack() : this.getCrack()
         } else if (typeof this.config.online == 'string') {
             if (this.config.online.match(/^(http|https):\/\/[^ "]+$/)) {
                 this.getAZauth();
@@ -52,7 +52,7 @@ class Login {
 
             }).catch(err => {
                 popupLogin.openPopup({
-                    title: 'Erreur',
+                    title: 'Hata',
                     content: err,
                     options: true
                 });
@@ -72,7 +72,7 @@ class Login {
         connectOffline.addEventListener('click', async () => {
             if (emailOffline.value.length < 3) {
                 popupLogin.openPopup({
-                    title: 'Erreur',
+                    title: 'Hata',
                     content: 'Votre pseudo doit faire au moins 3 caractères.',
                     options: true
                 });
@@ -81,7 +81,7 @@ class Login {
 
             if (emailOffline.value.match(/ /g)) {
                 popupLogin.openPopup({
-                    title: 'Erreur',
+                    title: 'Hata',
                     content: 'Votre pseudo ne doit pas contenir d\'espaces.',
                     options: true
                 });
@@ -92,7 +92,7 @@ class Login {
 
             if (MojangConnect.error) {
                 popupLogin.openPopup({
-                    title: 'Erreur',
+                    title: 'Hata',
                     content: MojangConnect.message,
                     options: true
                 });
@@ -128,7 +128,7 @@ class Login {
 
             if (AZauthEmail.value == '' || AZauthPassword.value == '') {
                 PopupLogin.openPopup({
-                    title: 'Erreur',
+                    title: 'Hata',
                     content: 'Veuillez remplir tous les champs.',
                     options: true
                 });
@@ -139,7 +139,7 @@ class Login {
 
             if (AZauthConnect.error) {
                 PopupLogin.openPopup({
-                    title: 'Erreur',
+                    title: 'Hata',
                     content: AZauthConnect.message,
                     options: true
                 });
@@ -163,7 +163,7 @@ class Login {
 
                     if (AZauthA2F.value == '') {
                         PopupLogin.openPopup({
-                            title: 'Erreur',
+                            title: 'Hata',
                             content: 'Veuillez entrer le code A2F.',
                             options: true
                         });
@@ -174,7 +174,7 @@ class Login {
 
                     if (AZauthConnect.error) {
                         PopupLogin.openPopup({
-                            title: 'Erreur',
+                            title: 'Hata',
                             content: AZauthConnect.message,
                             options: true
                         });

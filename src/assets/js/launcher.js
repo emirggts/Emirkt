@@ -167,10 +167,10 @@ class Launcher {
                     await addAccount(refresh_accounts)
                     if (account_ID == account_selected) accountSelect(refresh_accounts)
                 } else if (account.meta.type == 'AZauth') {
-                    console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
+                    console.log(`Hesap Türü: ${account.meta.type} | Kullanıcı Adı: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
-                        content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
+                        title: 'Bağlantı',
+                        content: `Hesap Türünü Yenile: ${account.meta.type} | Kullanıcı Adı: ${account.name}`,
                         color: 'var(--color)',
                         background: false
                     });
@@ -191,10 +191,10 @@ class Launcher {
                     await addAccount(refresh_accounts)
                     if (account_ID == account_selected) accountSelect(refresh_accounts)
                 } else if (account.meta.type == 'Mojang') {
-                    console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
+                    console.log(`Hesap Türü: ${account.meta.type} | Kullanıcı Adı: ${account.name}`);
                     popupRefresh.openPopup({
-                        title: 'Connexion',
-                        content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
+                        title: 'Bağlantı',
+                        content: `Hesap Türünü Yenile: ${account.meta.type} | Kullanıcı Adı: ${account.name}`,
                         color: 'var(--color)',
                         background: false
                     });
@@ -225,7 +225,7 @@ class Launcher {
                     await addAccount(refresh_accounts)
                     if (account_ID == account_selected) accountSelect(refresh_accounts)
                 } else {
-                    console.error(`[Account] ${account.name}: Account Type Not Found`);
+                    console.error(`[Account] ${account.name}: Hesap Türü Bulunamadı`);
                     this.db.deleteData('accounts', account_ID)
                     if (account_ID == account_selected) {
                         configClient.account_selected = null

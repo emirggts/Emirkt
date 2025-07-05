@@ -1,56 +1,52 @@
 <div class="container">
     <div class="nav-settings">
-        <p>Paramètres</p>
+        <p>Parametreler</p>
         <div class="nav-box">
-            <div id="account" class="nav-settings-btn active-settings-BTN">COMPTES</div>
+            <div id="account" class="nav-settings-btn active-settings-BTN">HESAPLAR</div>
             <div id="java" class="nav-settings-btn">JAVA</div>
-            <div id="resolution" class="nav-settings-btn">RESOLUTION</div>
+            <div id="resolution" class="nav-settings-btn">ÇÖZÜNÜRLÜK</div>
             <div id="launcher" class="nav-settings-btn">LAUNCHER</div>
-            <div id="save" class="nav-settings-btn">ACCUEIL</div>
+            <div id="save" class="nav-settings-btn">ANA SAYFA</div>
         </div>
     </div>
 
     <div id="account-tab" class="container-settings active-container-settings">
-        <div class="titre-tab">Comptes joueurs</div>
+        <div class="titre-tab">Oyuncu hesapları</div>
 
         <div class="accounts-list content-scroll">
             <div class="account" id="add">
                 <div class="add-profile">
                     <div class="icon-account-add"></div>
                 </div>
-                <div class="add-text-profile">Ajouter un compte</div>
+                <div class="add-text-profile">Bir hesap ekleyin</div>
             </div>
         </div>
     </div>
 
     <div id="java-tab" class="container-settings content-scroll">
-        <div class="titre-tab">Paramètre de votre RAM</div>
+        <div class="titre-tab">RAM'inizi ayarlama</div>
         <div class="settings-elements-box">
             <div class="setting-text">
-                Définition de la RAM alloué à votre jeu, une quantité plus important augmenteras les performances de
-                votre jeu.<br>
-                A noter qu'il faut éviter de mettre une trop grande quantité sinon cela peut provoquer des pertes de
-                performances sur vos autres applications.<br><br>
-                <b>-RAM Maximale:</b> Indique la quantité totale de RAM allouée à votre jeu. Il est recommandé de ne pas
-                dépasser 50% de la quantité totale de RAM présente sur votre PC.<br><br>
-                <b>-RAM Minimale:</b> Indique la quantité minimale de RAM allouée au démarrage de votre jeu. Il est
-                recommandé de ne pas mettre plus de 4Go pour cette valeur.
+                Oyununuza ayrılan RAM miktarını tanımlayın, daha büyük bir miktar oyununuzun performansını artıracaktır.<br>
+                Diğer uygulamalarınızda performans kayıplarına neden olabileceğinden, çok büyük bir miktar kullanmaktan kaçınmanız gerektiğini unutmayın..<br><br>
+                <b>-Maksimum RAM:</b> Oyununuza tahsis edilen toplam RAM miktarını gösterir. adresinin bilgisayarınızda bulunan toplam RAM miktarının %50'sini aşmaması önerilir.<br><br>
+                <b>-Minimum RAM:</b> Oyununuz başladığında ayrılan minimum RAM miktarını belirtir. Bu değeri en fazla 4GB olarak ayarlamanızı öneririz.
             </div>
             <div class="settings-elements content-evenly">
                 <div class="memory-slider" min="0.5" max="8" step="0.5">
                     <div class="slider-touch-left">
-                        <span value="0 Go"></span>
+                        <span value="0 GB"></span>
                     </div>
                     <div class="slider-touch-right">
-                        <span value="0 Go"></span>
+                        <span value="0 GB"></span>
                     </div>
                     <div class="slider-line">
                         <span></span>
                     </div>
                 </div>
                 <div class="ram-info-block">
-                    <b>Vous possédez un total de <span id="total-ram">0 Go</span> RAM.</b><br>
-                    <b>Vous possédez un total de <span id="free-ram">0 Go</span> RAM disponible.</b>
+                    <b>Toplamda şu kadar <span id="total-ram">0 GB</span> RAM.</b><br>
+                    <b>Toplamda şu kadar <span id="free-ram">0 GB</span> RAM mevcut.</b>
                 </div>
             </div>
         </div>
@@ -58,29 +54,29 @@
         <div class="titre-tab">Emplacement de Java</div>
         <div class="settings-elements-box">
             <div class="setting-text">
-                Le launcher utilise une version embarquée de Java.<br>
-                Cette version est disponible dans le répertoire :<br><span class="java-path-txt"></span><br>
-                Toutefois, vous pouvez spécifier votre propre exécutable si votre jeu requiert une version de java plus
-                recente.
+                Başlatıcı Java'nın gömülü bir sürümünü kullanır.<br>
+                Bu sürüm şu dizinde mevcuttur:<br><span class="java-path-txt"></span><br>
+                Ancak, oyununuz daha yeni bir java
+                sürümü gerektiriyorsa kendi yürütülebilir dosyanızı belirtebilirsiniz.
             </div>
             <div class="settings-elements content-evenly">
                 <input type="text" class="java-path-input-text" disabled>
                 <input type="file" class="java-path-input-file" accept="application/octet-stream" />
                 <div class="java-path-box">
-                    <div class="java-path-set java-path-btn">Changer</div>
-                    <div class="java-path-reset java-path-btn">Par defaut</div>
+                    <div class="java-path-set java-path-btn">Değişim</div>
+                    <div class="java-path-reset java-path-btn">Varsayılan olarak</div>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="resolution-tab" class="container-settings">
-        <div class="titre-tab">Paramètres de resolution Minecraft</div>
+        <div class="titre-tab">Minecraft çözünürlük ayarları</div>
         <div class="settings-elements-box">
             <div class="setting-text">
-                Définissez une résolution personnalisée afin d'avoir un jeu adapté à votre écran.<br>
-                Par défaut le jeu démarre en 854 X 480,<br>vous pouvez modifier cette valeur pour un confort de jeu
-                optimal. La résolution idéale est de 1280 X 720.
+                Ekranınıza uyacak şekilde oyun için özel bir çözünürlük ayarlayın.<br>
+                Varsayılan olarak oyun 854 X 480'de başlar,<br> ancak optimum oyun konforu için bu değeri değiştirebilirsiniz.
+                İdeal çözünürlük 1280 X 720'dir.
             </div>
             <div class="settings-elements content-center">
                 <div class="input-size-element">
@@ -88,22 +84,20 @@
                     <div class="size-cross"></div>
                     <input type="number" class="height-size input-resolution">
                 </div>
-                <div class="size-reset size-btn">Par defaut</div>
+                <div class="size-reset size-btn">Varsayılan olarak</div>
             </div>
         </div>
     </div>
 
     <div id="launcher-tab" class="container-settings content-scroll">
-        <div class="titre-tab">Paramètre de téléchargement</div>
+        <div class="titre-tab">Parametre indir</div>
         <div class="settings-elements-box">
             <div class="setting-text">
-                Ce paramètre détermine le nombre maximum de fichiers pouvant être téléchargés simultanément lors de la
-                mise à jour ou du téléchargement de ressources.<br><br>
+                Bu ayar,güncellerken veya kaynakları indirirken aynı anda indirilebilecek maksimum dosya sayısını belirler.<br><br>
 
-                Veuillez noter que la modification de ce paramètre peut affecter les performances de
-                téléchargement.<br>
-                Il est recommandé de ne pas dépasser les limites recommandées par défaut,<br>
-                sauf si vous rencontrez des problèmes spécifiques de connectivité.
+                Bu ayarın değiştirilmesinin indirme performansını etkileyebileceğini lütfen unutmayın.<br>
+                Önerilen varsayılan limitlerin aşılmaması tavsiye edilir,<br>
+                Belirli bağlantı sorunları yaşamadığınız sürece.
             </div>
             <div class="settings-elements content-center">
                 <input type="number" class="max-files input-max-files">
@@ -112,31 +106,31 @@
             </div>
         </div>
 
-        <div class="titre-tab">Thème clair et sombre</div>
+        <div class="titre-tab">Açık ve koyu tema</div>
         <div class="settings-elements-box">
             <div class="setting-text">
-                Choisissez entre le thème clair et le thème sombre pour personnaliser l'apparence du launcher.<br><br>
+                Başlatıcının görünümünü özelleştirmek için açık ve koyu temalar arasından seçim yapın.<br><br>
 
-                La modification du thème peut influencer la lisibilité et l'expérience visuelle.<br>
-                Sélectionnez celui qui vous convient le mieux en fonction de vos préférences.
+                Temanın değiştirilmesi okunabilirliği ve görsel deneyimi etkileyebilir.<br>
+                Tercihlerinize göre size en uygun olanı seçin.
             </div>
             <div class="settings-elements content-center theme-box">
-                <div class="theme-btn theme-btn-clair">Clair</div>
-                <div class="theme-btn theme-btn-sombre">Sombre</div>
-                <div class="theme-btn theme-btn-auto">Automatique</div>
+       <!--          <div class="theme-btn theme-btn-clair">Aydınlık</div>-->
+                <div class="theme-btn theme-btn-sombre">Karanlık</div>
+        <!--         <div class="theme-btn theme-btn-auto">Otomatik</div>-->
             </div>
         </div>
 
-        <div class="titre-tab">Comportement du launcher au démarrage</div>
+        <div class="titre-tab">Başlangıçta başlatıcı davranışı</div>
         <div class="settings-elements-box">
             <div class="setting-text">
-                Vous pouvez choisir si le launcher se ferme automatiquement ou reste ouvert lorsque vous lancez le jeu.
+                Oyunu başlattığınızda başlatıcının otomatik olarak kapanmasını veya açık kalmasını seçebilirsiniz.
             </div>
 
             <div class="settings-elements content-evenly close-box">
-                <div class="close-launcher close-btn">Fermer le launcher après le démarrage du jeu</div>
-                <div class="close-none close-btn">Garder le launcher ouvert</div>
-                <div class="close-all close-btn">Fermer le jeu si le launcher est fermé</div>
+                <div class="close-launcher close-btn">Oyunu başlattıktan sonra başlatıcıyı kapatın</div>
+                <div class="close-none close-btn">Başlatıcıyı açık tutma</div>
+                <div class="close-all close-btn">Başlatıcı kapalıysa oyunu kapatın</div>
             </div>
         </div>
 
