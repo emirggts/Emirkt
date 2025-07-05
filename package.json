@@ -1,7 +1,7 @@
 {
     "name": "Olimpus-Launcher",
     "preductname": "Olimpus Launcher",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Launcher Mincraft pour le serveur Olimpus",
     "main": "src/app.js",
     "author": {
@@ -9,7 +9,7 @@
         "email": "nocontach",
         "url": "https://github.com/emirggts"
     },
-    "url": "http://localhost/",
+    "url": "https://olimpuscraft.com/luncher",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
